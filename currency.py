@@ -6,6 +6,8 @@ import requests
 import json
 import time
 
+graph_data = []
+
 def RealTimeCurrency(from_currency, to_currency, api_key, current_hour):
     
 ##    print(from_currency)
@@ -23,7 +25,10 @@ def RealTimeCurrency(from_currency, to_currency, api_key, current_hour):
 
 ##    print("Result before parsing the json data: \n", result)
 
+    graph_data.append(result["Realtime Currency Exchange Rate"]["5. Exchange Rate"])
+
     print(current_hour)
+    #print(result["Realtime Currency Exchange Rate"]["5. Exchange Rate"])
 
     print("Realtime Currency Exchange Rate for",
             result["Realtime Currency Exchange Rate"]
@@ -33,6 +38,8 @@ def RealTimeCurrency(from_currency, to_currency, api_key, current_hour):
             result["Realtime Currency Exchange Rate"]
             ["5. Exchange Rate"], to_currency)
 
+def animate(i):
+    graph_data = 
 
 if __name__ == "__main__":
 
